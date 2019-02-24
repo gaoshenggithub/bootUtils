@@ -1,0 +1,10 @@
+ali:
+ pay:
+  URL: "https://openapi.alipay.com/gateway.do"
+  APPID: ""
+  RSA_PRIVATE_KEY: ""
+  ALIPAY_PUBLIC_KEY: ""
+  NOTIFY_URL: ""
+  CHARSET: "UTF-8"
+  FORMAT: "json"
+  SIGNTYPE: "RSA2"
