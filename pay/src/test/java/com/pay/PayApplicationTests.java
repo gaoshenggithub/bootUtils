@@ -1,6 +1,7 @@
 package com.pay;
 
 import com.pay.model.AliConfig;
+import com.pay.model.People;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +12,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class PayApplicationTests {
 	@Autowired
-	private static AliConfig aliConfig;
+	 People aliConfig;
 
 
 	@Test
 	public void contextLoads() {
+		System.out.println(aliConfig);
 	}
 
 }
