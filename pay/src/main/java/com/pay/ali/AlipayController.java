@@ -142,7 +142,7 @@ public class AlipayController {
             params.put(name, valueStr);
         }
         //移到下面做处理
-        String notify = notify(requestParams);
+        String notify = notify(params);
         if (notify.equals("fail")) {
             result.put("code", 200);
             result.put("data", "");

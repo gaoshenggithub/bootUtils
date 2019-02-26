@@ -142,6 +142,7 @@ public class WxpayController {
     @Transactional
     public JSONObject payBack(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter writer = response.getWriter();
+        response.reset();
         InputStream inStream = request.getInputStream();
         ByteArrayOutputStream outSteam = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
@@ -274,7 +275,7 @@ public class WxpayController {
             String sign = WXPayUtil.generateSignature(reqData, "", WXPayConstants.SignType.HMACSHA256);
             reqData.put("sign", sign);
 
-            String data = WXPayUtil.mapToXml(reqData);
+            String data = com.github.wxpay.sdk.WXPayUtil.mapToXml(reqData);
             logger.info("参数返回");
             logger.info(data);
 
@@ -300,7 +301,7 @@ public class WxpayController {
             String sign = WXPayUtil.generateSignature(reqData, "", WXPayConstants.SignType.HMACSHA256);
             reqData.put("sign", sign);
 
-            String data = WXPayUtil.mapToXml(reqData);
+            String data = com.github.wxpay.sdk.WXPayUtil.mapToXml(reqData);
             logger.info("参数返回");
             logger.info(data);
 
@@ -330,7 +331,7 @@ public class WxpayController {
             String sign = WXPayUtil.generateSignature(reqData, "", WXPayConstants.SignType.HMACSHA256);
             reqData.put("sign", sign);
 
-            String data = WXPayUtil.mapToXml(reqData);
+            String data = com.github.wxpay.sdk.WXPayUtil.mapToXml(reqData);
             logger.info("参数返回");
             logger.info(data);
 
@@ -356,7 +357,7 @@ public class WxpayController {
             String sign = WXPayUtil.generateSignature(reqData, "", WXPayConstants.SignType.HMACSHA256);
             reqData.put("sign", sign);
 
-            String data = WXPayUtil.mapToXml(reqData);
+            String data = com.github.wxpay.sdk.WXPayUtil.mapToXml(reqData);
             logger.info("参数返回");
             logger.info(data);
 
@@ -392,6 +393,8 @@ public class WxpayController {
         //终端IP
         reqData.put("spbill_create_ip", "127.0.0.1");
         //通知地址
+
+
         reqData.put("notify_url", "");
         //
         reqData.put("trade_type", "NATIVE");
@@ -399,7 +402,7 @@ public class WxpayController {
             String sign = WXPayUtil.generateSignature(reqData, "", WXPayConstants.SignType.HMACSHA256);
             reqData.put("sign", sign);
 
-            String data = WXPayUtil.mapToXml(reqData);
+            String data = com.github.wxpay.sdk.WXPayUtil.mapToXml(reqData);
             logger.info("参数返回");
             logger.info(data);
 
